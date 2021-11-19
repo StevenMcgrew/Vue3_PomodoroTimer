@@ -14,12 +14,14 @@ import Footer from './components/Footer.vue'
 </template>
 
 <style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
     min-height: 100vh;
     margin: 0;
 }
 #app {
-    box-sizing: border-box;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -27,5 +29,6 @@ body {
 }
 .page-container {
     flex: 1;
+    display: flex;
 }
 </style>
