@@ -7,7 +7,9 @@ import Footer from './components/Footer.vue'
 
 <template>
     <Header></Header>
-        <router-view class="page-container"></router-view>
+    <div class="page-container">
+        <router-view></router-view>
+    </div>
     <Footer></Footer>
 </template>
 
@@ -24,6 +26,6 @@ body {
     min-height: 100vh;
 }
 .page-container {
-    flex: 1
+    flex: 1;
 }
 </style>

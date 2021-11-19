@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
-    <span>{{ counter }}</span>
+    <span>{{ $store.state.counter }}</span>
 </template>
