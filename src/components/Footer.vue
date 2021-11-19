@@ -1,3 +1,5 @@
 <template>
-<p>Footer</p>
+    <footer>
+        Steve's Pomodoro Timer demo app
+    </footer>
 </template>
