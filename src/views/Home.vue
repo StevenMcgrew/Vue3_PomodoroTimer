@@ -1,6 +1,6 @@
 <script setup>
 
-import Settings from "../components/Settings.vue"
+import Settings from "../components/Settings/Settings.vue"
 import Counter from "../components/Counter.vue"
 
 </script>
