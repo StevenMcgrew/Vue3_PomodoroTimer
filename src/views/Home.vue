@@ -16,7 +16,7 @@ import Counter from "../components/Counter.vue"
 .home {
     width: 100%;
     display: grid;
-    grid-template-rows: 20px 1fr 20px;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "settings"
         "graphic"

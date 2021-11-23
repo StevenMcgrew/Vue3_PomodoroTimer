@@ -1,6 +1,7 @@
 <script setup>
 
 defineProps({
+    id: String,
     label: String,
     defaultNumber: Number,
 })
@@ -8,10 +9,13 @@ defineProps({
 </script>
 
 <template>
-    <label>{{ label }}
-        <input type="number" value="{{ defaultNumber }} || 0">
-    </label>
+    <label :for="id">{{ label }}</label>
+    <input :id="id" type="number" :value="defaultNumber || 1" />
 </template>
 
 <style scoped>
+label {
+    display: inline-block;
+    width: 150px;
+}
 </style>

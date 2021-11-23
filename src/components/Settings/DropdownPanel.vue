@@ -25,9 +25,9 @@ watchEffect(() => {
 
 <template>
     <div ref="dropdownPanel">
-        <NumberInput :label="'Work'" :default-number="25" />
-        <NumberInput :label="'Short break'" :default-number="5" />
-        <NumberInput :label="'Long break'" :default-number="30" />
+        <NumberInput :id="'workInterval'" :label="'Work Interval'" :default-number="25" /><br>
+        <NumberInput :id="'shortBreak'" :label="'Short break'" :default-number="5" /><br>
+        <NumberInput :id="'longBreak'" :label="'Long break'" :default-number="30" /><br>
     </div>
 </template>
 

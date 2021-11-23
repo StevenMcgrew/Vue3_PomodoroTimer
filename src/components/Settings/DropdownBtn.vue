@@ -24,7 +24,7 @@ button {
     transition: 0.4s;
 }
 button:after {
-    content: "\02795"; /* Unicode character for "plus" sign (+) */
+    content: "\25BC"; /* Unicode down arrowhead */
     font-size: 13px;
     color: #777;
     float: right;
@@ -34,6 +34,6 @@ button:after {
     background-color: #ccc;
 }
 .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\25B2"; /* Unicode up arrowhead */
 }
 </style>
