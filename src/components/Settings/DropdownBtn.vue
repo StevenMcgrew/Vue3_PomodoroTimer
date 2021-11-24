@@ -16,7 +16,7 @@ button {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 18rem;
     width: 100%;
     text-align: left;
     border: none;
@@ -24,16 +24,16 @@ button {
     transition: 0.4s;
 }
 button:after {
-    content: "\25BC"; /* Unicode down arrowhead */
-    font-size: 13px;
+    content: "\25BC"; /* Down arrowhead */
+    font-size: 13rem;
     color: #777;
     float: right;
-    margin-left: 5px;
+    margin-left: 5rem;
 }
 .active {
     background-color: #ccc;
 }
 .active:after {
-    content: "\25B2"; /* Unicode up arrowhead */
+    content: "\25B2"; /* Up arrowhead */
 }
 </style>

@@ -17,12 +17,20 @@ import Footer from './components/Footer.vue'
 *, *::before, *::after {
   box-sizing: border-box;
 }
+html {
+    font-size: 0.0625rem;
+}
 body {
+    font-size: 16rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
     margin: 0;
 }
+input, textarea, button {
+    font: inherit;
+}
 #app {
-    padding: 10px;
+    padding: 10rem;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
