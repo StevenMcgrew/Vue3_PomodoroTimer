@@ -7,8 +7,9 @@ import Counter from "../components/Counter.vue"
 
 <template>
     <div class="home">
-        <Settings class="settings"/>
-        <Counter class="counter"/>
+        <Settings class="settings" />
+
+        <Counter class="counter" />
     </div>
 </template>
 

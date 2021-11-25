@@ -1,6 +1,9 @@
 <script setup>
 
-defineProps({
+import { useStore } from 'vuex'
+const store = useStore()
+
+const props = defineProps({
     id: String,
     label: String,
     initialValue: Number,
@@ -8,11 +11,25 @@ defineProps({
     max: Number,
 })
 
+function onInput(e) {
+    store.commit('updateTimeSetting', { propName: props.id, time: e.target.value})
+}
+
+// on created...
+store.commit('updateTimeSetting', { propName: props.id, time: props.initialValue})
+
 </script>
 
 <template>
     <label :for="id">{{ label }}</label>
-    <input :id="id" type="number" :value="initialValue || 1" :min="min" :max="max"/>
+    <input
+        :id="id"
+        type="number"
+        :min="min"
+        :max="max"
+        :value="store.state[id]"
+        @input="onInput($event)"
+    />
 </template>
 
 <style scoped>
