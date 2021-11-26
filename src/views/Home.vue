@@ -2,14 +2,18 @@
 
 import Settings from "../components/Settings/Settings.vue"
 import Counter from "../components/Counter.vue"
+import StartStopBtn from "../components/startStopBtn.vue";
 
 </script>
 
 <template>
     <div class="home">
-        <Settings class="settings" />
+        <Settings class="settings"/>
 
-        <Counter class="counter" />
+        <div class="counter">
+            <Counter/>
+            <StartStopBtn/>
+        </div>
     </div>
 </template>
 

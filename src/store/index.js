@@ -7,6 +7,7 @@ export default createStore({
         workInterval: 0,
         shortBreak: 0,
         longBreak: 0,
+        isTimerRunning: false,
     },
     mutations: {
         toggleSettingsVisibility(state) {
@@ -14,6 +15,9 @@ export default createStore({
         },
         updateTimeSetting(state, payload) {
             state[payload.propName] = payload.time
+        },
+        toggleTimer(state) {
+            state.isTimerRunning = !state.isTimerRunning
         },
     },
     actions: {
