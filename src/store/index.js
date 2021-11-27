@@ -1,13 +1,16 @@
 import { createStore } from "vuex"
+import { startTimer, stopTimer } from '../utils.js'
 
 export default createStore({
     state: {
         counter: '00:00',
+        time: 0,
         showSettings: false,
         workInterval: 0,
         shortBreak: 0,
         longBreak: 0,
         isTimerRunning: false,
+        progress: ['workInterval'],
     },
     mutations: {
         toggleSettingsVisibility(state) {
@@ -17,7 +20,12 @@ export default createStore({
             state[payload.propName] = payload.time
         },
         toggleTimer(state) {
-            state.isTimerRunning = !state.isTimerRunning
+            if (state.isTimerRunning) {
+                stopTimer(state)
+            }
+            else {
+                startTimer(state)
+            }
         },
     },
     actions: {

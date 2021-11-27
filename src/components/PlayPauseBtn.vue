@@ -9,14 +9,15 @@ const isTimerRunning = computed(() => store.state.isTimerRunning)
 </script>
 
 <template>
-    <div role="button" class="start-stop-btn" @click="store.commit('toggleTimer')">
-        <i v-show="!isTimerRunning" class="far fa-play-circle"></i>
-        <i v-show="isTimerRunning" class="far fa-pause-circle"></i>
+    <div role="button" class="play-pause-btn" @click="store.commit('toggleTimer')">
+        <i v-show="!isTimerRunning" class="fas fa-play-circle"></i>
+        <i v-show="isTimerRunning" class="fas fa-pause-circle"></i>
     </div>
 </template>
 
 <style scoped>
-.start-stop-btn {
+.play-pause-btn {
     display: inline;
+    font-size: 64rem;
 }
 </style>

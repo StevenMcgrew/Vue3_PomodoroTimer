@@ -2,7 +2,7 @@
 
 import Settings from "../components/Settings/Settings.vue"
 import Counter from "../components/Counter.vue"
-import StartStopBtn from "../components/startStopBtn.vue";
+import PlayPauseBtn from "../components/PlayPauseBtn.vue";
 
 </script>
 
@@ -12,7 +12,7 @@ import StartStopBtn from "../components/startStopBtn.vue";
 
         <div class="counter">
             <Counter/>
-            <StartStopBtn/>
+            <PlayPauseBtn/>
         </div>
     </div>
 </template>
