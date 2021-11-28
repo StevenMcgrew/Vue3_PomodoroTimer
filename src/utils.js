@@ -17,41 +17,44 @@ function getNextTimerMode(progress) {
     }
 }
 
+function onTimerFinished(state) {
+    state.counter = '00:00'
+    state.time = 0
+    state.progress.push(getNextTimerMode(state.progress))
+    stopTimer(state)
+}
+
+function setupNextTimerMode(state) {
+    let timerMode = state.progress[state.progress.length - 1]
+    state.time = state[timerMode] * 60000
+    state.counter = msToString(state.time)
+}
+
 let intervalID = null
 function startTimer(state) {
-    let timerMode = state.progress[state.progress.length - 1]
-    let modeTimeAmount = state[timerMode] * 60000
-    console.log(state.counter)
-    console.log(state.time)
-    if (state.counter === '00:00') {
-        console.log('state.counter is 00:00')
-        state.time = modeTimeAmount
-        state.counter = msToString(state.time)
-    }
     state.isTimerRunning = true
+    let timeRemaining = state.time
     let startTime = Date.now()
-
     intervalID = setInterval(function () {
-        let elapsed = Date.now() - startTime
-        let newTime = modeTimeAmount - elapsed
+        let timeElapsed = Date.now() - startTime
+        let newTime = timeRemaining - timeElapsed
         if (newTime <= 0) {
-            state.counter = '00:00'
-            state.time = 0
-            state.progress.push(getNextTimerMode(state.progress))
-            stopTimer()
+            onTimerFinished(state)
+            setupNextTimerMode(state)
+            return
         }
         state.time = newTime
         state.counter = msToString(newTime)
-
     }, 200)
 }
 
 function stopTimer(state) {
-    clearInterval(intervalID)
+    intervalID ? clearInterval(intervalID) : {}
     state.isTimerRunning = false
 }
 
 export {
     startTimer,
     stopTimer,
+    setupNextTimerMode,
 }

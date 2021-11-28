@@ -2,17 +2,17 @@
 
 import Settings from "../components/Settings/Settings.vue"
 import Counter from "../components/Counter.vue"
-import PlayPauseBtn from "../components/PlayPauseBtn.vue";
+import PlayPauseBtn from "../components/PlayPauseBtn.vue"
 
 </script>
 
 <template>
     <div class="home">
-        <Settings class="settings"/>
+        <Settings class="settings" />
 
         <div class="counter">
-            <Counter/>
-            <PlayPauseBtn/>
+            <Counter />
+            <PlayPauseBtn />
         </div>
     </div>
 </template>

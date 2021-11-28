@@ -1,5 +1,5 @@
 import { createStore } from "vuex"
-import { startTimer, stopTimer } from '../utils.js'
+import { startTimer, stopTimer, setupNextTimerMode } from '../utils.js'
 
 export default createStore({
     state: {
@@ -13,6 +13,9 @@ export default createStore({
         progress: ['workInterval'],
     },
     mutations: {
+        setInitialTimer(state) {
+            setupNextTimerMode(state)
+        },
         toggleSettingsVisibility(state) {
             state.showSettings = !state.showSettings
         },
