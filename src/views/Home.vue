@@ -1,6 +1,5 @@
 <script setup>
 
-import Settings from "../components/Settings/Settings.vue"
 import Counter from "../components/Counter.vue"
 import PlayPauseBtn from "../components/PlayPauseBtn.vue"
 
@@ -8,7 +7,8 @@ import PlayPauseBtn from "../components/PlayPauseBtn.vue"
 
 <template>
     <div class="home">
-        <Settings class="settings" />
+        <router-link to="/about">About</router-link>
+        <router-link to="/settings">Settings</router-link>
 
         <div class="counter">
             <Counter />

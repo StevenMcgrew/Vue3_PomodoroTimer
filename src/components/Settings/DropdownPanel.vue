@@ -1,6 +1,6 @@
 <script setup>
 
-import NumberInput from './NumberInput.vue'
+import NumberInput from '../NumberInput.vue'
 
 import { ref, computed, watchEffect } from 'vue'
 import { useStore } from 'vuex'
