@@ -12,25 +12,18 @@ const props = defineProps({
     max: Number,
 })
 
+// bind v-model="number" to the vuex store
 const number = computed({
     get() {
         return store.state[props.id]
     },
     set(value) {
-        store.commit('updateTimeSetting', { propName: props.id, time: value })
+        store.commit('updateTimeSetting', { propName: props.id, propValue: value })
     }
 })
 
-// const number = computed(() => {
-//     store.commit('updateTimeSetting', { propName: props.id, time: number.value })
-// })
-
-// function onInput(e) {
-//     store.commit('updateTimeSetting', { propName: props.id, time: e.target.value})
-// }
-
 // on created...
-// store.commit('updateTimeSetting', { propName: props.id, time: props.initialValue })
+store.commit('updateTimeSetting', { propName: props.id, propValue: props.initialValue })
 
 </script>
 

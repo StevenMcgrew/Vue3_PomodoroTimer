@@ -21,6 +21,7 @@ function onTimerFinished(state) {
     state.counter = '00:00'
     state.time = 0
     state.progress.push(getNextTimerMode(state.progress))
+    state.isTimerInProgress = false
     stopTimer(state)
 }
 
@@ -33,6 +34,7 @@ function setupNextTimerMode(state) {
 let intervalID = null
 function startTimer(state) {
     state.isTimerRunning = true
+    state.isTimerInProgress = true
     let timeRemaining = state.time
     let startTime = Date.now()
     intervalID = setInterval(function () {

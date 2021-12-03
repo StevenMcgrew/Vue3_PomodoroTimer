@@ -1,12 +1,7 @@
 <script setup>
 
-import { onMounted } from "vue"
 import { useStore } from "vuex"
 const store = useStore()
-
-onMounted(() => {
-    store.commit('setInitialTimer')
-})
 
 </script>
 

@@ -10,6 +10,7 @@ export default createStore({
         shortBreak: 0,
         longBreak: 0,
         isTimerRunning: false,
+        isTimerInProgress: false,
         progress: ['workInterval'],
     },
     mutations: {
@@ -20,15 +21,11 @@ export default createStore({
             state.showSettings = !state.showSettings
         },
         updateTimeSetting(state, payload) {
-            state[payload.propName] = payload.time
+            state[payload.propName] = payload.propValue
+            state.isTimerInProgress ? {} : setupNextTimerMode(state)
         },
         toggleTimer(state) {
-            if (state.isTimerRunning) {
-                stopTimer(state)
-            }
-            else {
-                startTimer(state)
-            }
+            state.isTimerRunning ? stopTimer(state) : startTimer(state)
         },
     },
     actions: {

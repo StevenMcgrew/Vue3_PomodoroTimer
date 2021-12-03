@@ -8,25 +8,34 @@ import Footer from './components/Footer.vue'
 <template>
     <Header></Header>
     <div class="page-container">
-        <router-view></router-view>
+        <router-view v-slot="{ Component }">
+            <keep-alive>
+                <component :is="Component" />
+            </keep-alive>
+        </router-view>
     </div>
     <Footer></Footer>
 </template>
 
 <style>
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 html {
     font-size: 0.0625rem;
 }
 body {
     font-size: 16rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     min-height: 100vh;
     margin: 0;
 }
-input, textarea, button {
+input,
+textarea,
+button {
     font: inherit;
 }
 #app {
