@@ -7,8 +7,6 @@ import PlayPauseBtn from "../components/PlayPauseBtn.vue"
 
 <template>
     <div class="home">
-        <router-link to="/about">About</router-link>
-        <router-link to="/settings">Settings</router-link>
 
         <div class="counter">
             <Counter />
@@ -29,7 +27,7 @@ import PlayPauseBtn from "../components/PlayPauseBtn.vue"
 }
 .counter {
     grid-area: counter;
-    justify-self: flex-end;
+    justify-self: center;
 }
 .settings {
     grid-area: settings;

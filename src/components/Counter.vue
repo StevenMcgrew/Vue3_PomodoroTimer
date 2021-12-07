@@ -13,7 +13,7 @@ const store = useStore()
 <style scoped>
 span {
     font-family: 'Lucida Console', 'Courier New', Courier, monospace;
-    font-size: 100rem;
+    font-size: 80rem;
     font-weight: 300;
 }
 </style>

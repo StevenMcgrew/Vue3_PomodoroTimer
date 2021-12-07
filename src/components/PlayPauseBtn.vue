@@ -18,6 +18,6 @@ const isTimerRunning = computed(() => store.state.isTimerRunning)
 <style scoped>
 .play-pause-btn {
     display: inline;
-    font-size: 64rem;
+    font-size: 58rem;
 }
 </style>
