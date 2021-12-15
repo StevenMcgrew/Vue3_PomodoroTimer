@@ -1,3 +1,5 @@
+import store from "./store"
+
 function el(idString) {
     return document.getElementById(idString)
 }
@@ -26,11 +28,15 @@ function onTimerFinished(state, alarmPlayer) {
     state.time = 0
     state.progress.push(getNextTimerMode(state.progress))
     state.isTimerInProgress = false
-    if (state.isPlayAlarm) { alarmPlayer.play() }
-    if (state.isShowNotification) {} // show notification 
+    if (state.doesUserWantAlarm) { alarmPlayer.play() }
+    if (state.doesUserWantNotify) {  } // show notification 
     
-    // Show modal to let user know the current timer mode has completed
+    // Show popup to let user know the current timer mode has completed
     // and which timer mode is next
+    state.finishedText = '...'
+    state.isShowFinishedPopup = true
+
+
 }
 
 function setupNextTimerMode(state) {

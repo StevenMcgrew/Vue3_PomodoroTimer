@@ -2,6 +2,7 @@
 
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import FinishedPopup from './components/FinishedPopup.vue'
 
 </script>
 
@@ -15,6 +16,8 @@ import Footer from './components/Footer.vue'
         </router-view>
     </div>
     <Footer></Footer>
+    <FinishedPopup></FinishedPopup>
+    <audio id="alarmPlayer" src="/src/assets/Beep.mp3" loop></audio>
 </template>
 
 <style>

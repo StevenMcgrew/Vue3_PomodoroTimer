@@ -11,8 +11,10 @@ export default createStore({
         isTimerRunning: false,
         isTimerInProgress: false,
         progress: ['workInterval'],
-        isPlayAlarm: true,
-        isShowNotification: true,
+        doesUserWantAlarm: true,
+        doesUserWantNotify: true,
+        finishedText: '',
+        isShowFinishedPopup: false,
     },
     mutations: {
         setInitialTimer(state) {

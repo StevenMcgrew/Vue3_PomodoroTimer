@@ -1,13 +1,9 @@
 <script setup>
 
-import { useStore } from "vuex"
-const store = useStore()
-
 </script>
 
-
 <template>
-    <span>{{ store.state.counter }}</span>
+    <span>{{ $store.state.counter }}</span>
 </template>
 
 <style scoped>
