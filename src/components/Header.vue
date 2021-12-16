@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Pomodoro Timer</h1>
+        <h1 @click="$router.push('/')">Pomodoro Timer</h1>
         <router-link class="header-nav" to="/about">About</router-link>
         <router-link class="header-nav" to="/settings">Settings</router-link>
     </header>
@@ -17,6 +17,10 @@ h1 {
     display: inline;
     margin: 0;
     font-weight: 400;
+}
+
+h1:hover {
+    cursor: pointer;
 }
 
 .header-nav {

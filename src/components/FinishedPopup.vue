@@ -1,13 +1,25 @@
 <script setup>
 
+import { useStore } from 'vuex'
+const store = useStore()
+
+function prepareNextTimerMode() {
+    store.state.isShowFinishedPopup = false
+    store.commit('prepareNextTimerMode')
+}
+
 </script>
 
 <template>
     <teleport to="body">
-        <div v-if="$store.state.isShowFinishedPopup" @click="$store.state.isShowFinishedPopup = false" class="finished-popup">
+        <div
+            v-if="store.state.isShowFinishedPopup"
+            @click="$store.state.isShowFinishedPopup = false"
+            class="finished-popup"
+        >
             <div class="finished-popup-content">
-                <p>{{ $store.state.finishedText }}</p>
-                <button @click="$store.state.isShowFinishedPopup = false">OK</button>
+                <p>{{ store.state.finishedText }}</p>
+                <button @click="prepareNextTimerMode">OK</button>
             </div>
         </div>
     </teleport>
@@ -33,8 +45,8 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 300px;
-    height: 300px;
-    padding: 5px;
+    max-width: 90%;
+    padding: 20px 30px 30px 30px;
+    border-radius: 3rem;
 }
 </style>

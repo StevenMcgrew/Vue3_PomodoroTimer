@@ -23,20 +23,30 @@ function getNextTimerMode(progress) {
     }
 }
 
+function formatModeToText(mode) {
+    if (mode === 'workInterval') { return 'work interval' }
+    if (mode === 'shortBreak') { return 'short break' }
+    if (mode === 'longBreak') { return 'long break' }
+}
+
 function onTimerFinished(state, alarmPlayer) {
     state.counter = '00:00'
     state.time = 0
-    state.progress.push(getNextTimerMode(state.progress))
     state.isTimerInProgress = false
+
+    let oldTimerMode = state.progress[state.progress.length - 1]
+    let newTimerMode = getNextTimerMode(state.progress)
+    state.progress.push(newTimerMode)
+    
     if (state.doesUserWantAlarm) { alarmPlayer.play() }
     if (state.doesUserWantNotify) {  } // show notification 
     
-    // Show popup to let user know the current timer mode has completed
-    // and which timer mode is next
-    state.finishedText = '...'
+    let previousMode = formatModeToText(oldTimerMode)
+    let nextMode = formatModeToText(newTimerMode)
+    state.finishedText = `The ${previousMode} timer has finished. Next up is a ${nextMode}.`
     state.isShowFinishedPopup = true
 
-
+    stopTimer(state)
 }
 
 function setupNextTimerMode(state) {
@@ -57,8 +67,6 @@ function startTimer(state) {
         let newTime = timeRemaining - timeElapsed
         if (newTime <= 0) {
             onTimerFinished(state, el('alarmPlayer'))
-            stopTimer(state)
-            setupNextTimerMode(state)
             return
         }
         state.time = newTime

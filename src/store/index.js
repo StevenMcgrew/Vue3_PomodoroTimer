@@ -11,7 +11,7 @@ export default createStore({
         isTimerRunning: false,
         isTimerInProgress: false,
         progress: ['workInterval'],
-        doesUserWantAlarm: true,
+        doesUserWantAlarm: false,
         doesUserWantNotify: true,
         finishedText: '',
         isShowFinishedPopup: false,
@@ -26,6 +26,9 @@ export default createStore({
         },
         toggleTimer(state) {
             state.isTimerRunning ? stopTimer(state) : startTimer(state)
+        },
+        prepareNextTimerMode(state) {
+            setupNextTimerMode(state)
         },
     },
     actions: {
