@@ -1,5 +1,5 @@
 import { createStore } from "vuex"
-import { startTimer, stopTimer, setupNextTimerMode } from '../storeUtils.js'
+import { startTimer, stopTimer, setupNextTimerMode, stopAlarms } from '../storeUtils.js'
 
 export default createStore({
     state: {
@@ -11,8 +11,8 @@ export default createStore({
         isTimerRunning: false,
         isTimerInProgress: false,
         progress: ['workInterval'],
-        doesUserWantAlarm: false,
-        doesUserWantNotify: true,
+        prefersSoundAlarm: true,
+        prefersTitleAlarm: true,
         finishedText: '',
         isShowFinishedPopup: false,
     },
@@ -28,6 +28,8 @@ export default createStore({
             state.isTimerRunning ? stopTimer(state) : startTimer(state)
         },
         prepareNextTimerMode(state) {
+            stopAlarms(state)
+            state.isShowFinishedPopup = false
             setupNextTimerMode(state)
         },
     },

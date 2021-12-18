@@ -1,25 +1,24 @@
 <script setup>
 
-import { useStore } from 'vuex'
-const store = useStore()
+// import { useStore } from 'vuex'
+// const store = useStore()
 
-function prepareNextTimerMode() {
-    store.state.isShowFinishedPopup = false
-    store.commit('prepareNextTimerMode')
-}
+// function onFinishedPopupClosed() {
+//     store.commit('prepareNextTimerMode')
+// }
 
 </script>
 
 <template>
     <teleport to="body">
         <div
-            v-if="store.state.isShowFinishedPopup"
-            @click="$store.state.isShowFinishedPopup = false"
+            v-if="$store.state.isShowFinishedPopup"
+            @click="$store.commit('prepareNextTimerMode')"
             class="finished-popup"
         >
             <div class="finished-popup-content">
-                <p>{{ store.state.finishedText }}</p>
-                <button @click="prepareNextTimerMode">OK</button>
+                <p>{{ $store.state.finishedText }}</p>
+                <button @click="$store.commit('prepareNextTimerMode')">OK</button>
             </div>
         </div>
     </teleport>
