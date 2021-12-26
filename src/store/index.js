@@ -28,7 +28,7 @@ export default createStore({
             state.isTimerRunning ? stopTimer(state) : startTimer(state)
         },
         prepareNextTimerMode(state) {
-            stopAlarms(state)
+            stopAlarms()
             state.isShowFinishedPopup = false
             setupNextTimerMode(state)
         },

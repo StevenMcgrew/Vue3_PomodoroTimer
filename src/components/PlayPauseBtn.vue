@@ -13,5 +13,8 @@
 .play-pause-btn {
     display: inline;
     font-size: 58rem;
+    padding: 20rem;
+    cursor: pointer;
+    color: rgb(84 110 122);
 }
 </style>

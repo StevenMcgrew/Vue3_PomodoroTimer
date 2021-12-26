@@ -17,7 +17,7 @@ import FinishedPopup from './components/FinishedPopup.vue'
     </div>
     <Footer></Footer>
     <FinishedPopup></FinishedPopup>
-    <audio id="alarmPlayer" src="/src/assets/Beep.mp3" loop></audio>
+    <audio id="alarmPlayer" src="/Beep.mp3" loop></audio>
 </template>
 
 <style>

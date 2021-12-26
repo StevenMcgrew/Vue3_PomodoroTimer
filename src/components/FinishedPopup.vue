@@ -1,12 +1,5 @@
 <script setup>
 
-// import { useStore } from 'vuex'
-// const store = useStore()
-
-// function onFinishedPopupClosed() {
-//     store.commit('prepareNextTimerMode')
-// }
-
 </script>
 
 <template>

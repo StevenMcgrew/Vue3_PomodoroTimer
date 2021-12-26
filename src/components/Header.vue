@@ -1,8 +1,11 @@
 <template>
     <header>
         <h1 @click="$router.push('/')">Pomodoro Timer</h1>
-        <router-link class="header-nav" to="/about">About</router-link>
-        <router-link class="header-nav" to="/settings">Settings</router-link>
+        <nav class="header-nav">
+            <router-link class="link" to="/">Home</router-link>
+            <router-link class="link" to="/about">About</router-link>
+            <router-link class="link" to="/settings">Settings</router-link>
+        </nav>
     </header>
 </template>
 
@@ -24,9 +27,27 @@ h1:hover {
 }
 
 .header-nav {
-    text-decoration: none;
     float: right;
-    padding: 10rem 20rem;
+    padding: 10rem;
+}
+.link {
+    text-decoration: none;
+    padding: 20rem;
     color: #ffffffde;
+}
+
+@media only screen and (max-width: 554px) {
+    .header-nav {
+        float: none;
+        text-align: center;
+        padding-bottom: 0rem;
+    }
+    h1 {
+        display: block;
+        text-align: center;
+    }
+    .link {
+        padding-top: 10rem;
+    }
 }
 </style>

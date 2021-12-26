@@ -68,7 +68,7 @@ function onTimerFinished(state, alarmPlayer) {
     stopTimer(state)
 }
 
-function stopAlarms(state) {
+function stopAlarms() {
     el('alarmPlayer').pause()
     stopTitleAlarm()
 }
