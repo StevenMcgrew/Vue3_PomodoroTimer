@@ -8,8 +8,8 @@
 
 <style scoped>
 span {
-    font-family: 'Lucida Console', 'Courier New', Courier, monospace;
-    font-size: 80rem;
-    font-weight: 300;
+    font-family: 'Varela Round', 'Lucida Console', 'Courier New', Courier, monospace;
+    font-size: 64rem;
+    color: #303030;
 }
 </style>

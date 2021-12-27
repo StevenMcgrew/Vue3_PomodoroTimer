@@ -36,7 +36,7 @@ h1:hover {
     color: #ffffffde;
 }
 
-@media only screen and (max-width: 554px) {
+@media only screen and (max-width: 586px) {
     .header-nav {
         float: none;
         text-align: center;
