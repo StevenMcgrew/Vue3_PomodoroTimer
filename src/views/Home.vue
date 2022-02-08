@@ -1,13 +1,16 @@
 <script setup>
 
-import Counter from "../components/Counter.vue"
-import PlayPauseBtn from "../components/PlayPauseBtn.vue"
+import ProgressBar from '../components/ProgressBar.vue'
+import Counter from '../components/Counter.vue'
+import PlayPauseBtn from '../components/PlayPauseBtn.vue'
 
 </script>
 
 <template>
     <div class="home">
-
+        <div class="graphic">
+            <ProgressBar />
+        </div>
         <div class="counter">
             <Counter />
             <PlayPauseBtn />
@@ -19,17 +22,18 @@ import PlayPauseBtn from "../components/PlayPauseBtn.vue"
 .home {
     width: 100%;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
-        "settings"
         "graphic"
         "counter";
+}
+.graphic {
+    grid-area: graphic;
+    display: flex;
+    align-items: center;
 }
 .counter {
     grid-area: counter;
     justify-self: center;
-}
-.settings {
-    grid-area: settings;
 }
 </style>
