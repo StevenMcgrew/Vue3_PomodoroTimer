@@ -30,10 +30,13 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
 .graphic {
     grid-area: graphic;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .counter {
     grid-area: counter;
     justify-self: center;
+    padding-bottom: 20rem;
 }
 </style>

@@ -3,30 +3,26 @@
 </script>
 
 <template>
-<div class="progress-bar">
-    <span class="work-block">work</span>
-    <span class="break-block">break</span>
-    <span class="work-block">work</span>
-    <span class="break-block">break</span>
-    <span class="work-block">work</span>
-    <span class="break-block">break</span>
-    <span class="work-block">work</span>
-    <span class="long-break-block">long break</span>
-</div>
+    <p class="progress-text">Click Settings to set your timer</p>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
 </template>
 
 <style scoped>
-
-.progress-bar {
-    width: 100%;
-    background-color: lightgray;
-    height: fit-content;
-    margin: 20rem;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
+.progress-text {
+    font-size: 20rem;
 }
-
-
-
+.progress-bar {
+    width: 90%;
+    height: 40rem;
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #536e7a;
+}
 </style>

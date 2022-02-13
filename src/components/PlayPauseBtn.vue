@@ -12,7 +12,7 @@
 <style scoped>
 .pp-btn-container {
     display: inline;
-    padding: 20rem;
+    padding: 20rem 0rem 20rem 20rem;
     text-align: center;
 }
 
@@ -27,6 +27,7 @@ i {
 @media only screen and (max-width: 430px) {
     .pp-btn-container {
         display: block;
+        padding: 20rem;
     }
 }
 </style>
