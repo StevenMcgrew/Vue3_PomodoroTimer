@@ -14,6 +14,7 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
         <div class="counter">
             <Counter />
             <PlayPauseBtn />
+            <router-link class="settings-link" to="/settings">Timer Settings</router-link>
         </div>
     </div>
 </template>
@@ -38,5 +39,11 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
     grid-area: counter;
     justify-self: center;
     padding-bottom: 20rem;
+}
+.settings-link {
+    display: block;
+    text-align: center;
+    color: #536e7a;
+    padding: 20rem;
 }
 </style>

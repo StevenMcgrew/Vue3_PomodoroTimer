@@ -4,11 +4,9 @@
 
 <template>
     <teleport to="body">
-        <div
-            v-if="$store.state.isShowFinishedPopup"
+        <div v-if="$store.state.isShowFinishedPopup"
             @click="$store.commit('prepareNextTimerMode')"
-            class="finished-popup"
-        >
+            class="finished-popup">
             <div class="finished-popup-content">
                 <p>{{ $store.state.finishedText }}</p>
                 <button @click="$store.commit('prepareNextTimerMode')">OK</button>

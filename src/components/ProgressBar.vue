@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <p class="progress-text">Click Settings to set your timer</p>
+    <p class="progress-text"></p>
     <div class="progress-bar">
         <div class="progress"></div>
     </div>

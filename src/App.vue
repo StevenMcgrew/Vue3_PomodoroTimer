@@ -15,7 +15,7 @@ function subscribeToSavingState() {
 function restoreStateIfAvaiable() {
     if (localStorage.getItem('state')) {
         store.replaceState(
-            Object.assign(store.state, JSON.parse(localStorage.getItem('store')))
+            Object.assign(store.state, JSON.parse(localStorage.getItem('state')))
         )
     }
 }
