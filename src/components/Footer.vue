@@ -6,6 +6,6 @@
 footer {
     text-align: center;
     font-size: 14rem;
-    color: #767676;
+    color: var(--light-text-color);
 }
 </style>

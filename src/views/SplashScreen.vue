@@ -32,7 +32,7 @@ setTimeout(function() {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: #536e7a;
+    background-color: var(--app-primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;

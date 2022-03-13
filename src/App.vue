@@ -17,6 +17,9 @@ function restoreStateIfAvaiable() {
         store.replaceState(
             Object.assign(store.state, JSON.parse(localStorage.getItem('state')))
         )
+        // directly set the --app-primary-color css variable until we find a way to do it the vue way.
+        let DOMroot = document.querySelector(':root')
+        DOMroot.style.setProperty("--app-primary-color", store.state.appPrimaryColor)
     }
 }
 
@@ -46,6 +49,13 @@ onAppStartUp()
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
+:root {
+    --app-primary-color: #536e7a;
+    --dark-text-color: #303030;
+    --light-text-color: #767676;
+    --white-text-color: #ffffffde;
+}
+
 *,
 *::before,
 *::after {
@@ -61,6 +71,7 @@ body {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
+    color: var(--dark-text-color);
     min-height: 100vh;
     margin: 0;
 }
@@ -69,6 +80,10 @@ input,
 textarea,
 button {
     font: inherit;
+}
+
+a {
+    color: var(--app-primary-color);
 }
 
 #app {
@@ -80,5 +95,6 @@ button {
 .page-container {
     flex: 1;
     display: flex;
+    justify-content: center;
 }
 </style>

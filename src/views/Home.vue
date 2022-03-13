@@ -7,14 +7,18 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
 </script>
 
 <template>
-    <div class="home">
+    <div v-if="$store.state.time === -1" class="welcome-msg">
+        <p>Welcome!</p>
+        <p>Go to <router-link to="/settings">Settings</router-link> to get started.</p>
+    </div>
+    <div v-else class="home">
         <div class="graphic">
             <ProgressBar />
         </div>
         <div class="counter">
             <Counter />
             <PlayPauseBtn />
-            <router-link class="settings-link" to="/settings">Timer Settings</router-link>
+            <router-link class="settings-link" to="/settings">Settings</router-link>
         </div>
     </div>
 </template>
@@ -43,7 +47,12 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
 .settings-link {
     display: block;
     text-align: center;
-    color: #536e7a;
     padding: 20rem;
+}
+.welcome-msg {
+    font-size: 22rem;
+    text-align: center;
+    align-self: center;
+    margin-top: -80rem;
 }
 </style>

@@ -7,28 +7,23 @@ const store = useStore()
 const props = defineProps({
     id: String,
     label: String,
-    min: Number,
-    max: Number,
 })
 
-// bind v-model="number" to the vuex store
-const number = computed({
+// bind v-model="color" to the vuex store
+const color = computed({
     get() {
         return store.state[props.id]
     },
     set(value) {
-        store.commit('updateTimeSetting', { propName: props.id, propValue: value })
+        store.commit('updateAppPrimaryColor', { propName: props.id, propValue: value })
     }
 })
-
-// on created...
-//store.commit('updateTimeSetting', { propName: props.id, propValue: props.initialValue })
 
 </script>
 
 <template>
     <label :for="id">{{ label }}</label>
-    <input :id="id" type="number" :min="min" :max="max" v-model="number" />
+    <input :id="id" type="color" v-model="color" />
 </template>
 
 <style scoped>
@@ -36,5 +31,9 @@ label {
     display: inline-block;
     width: 150rem;
     padding: 10rem 0rem;
+}
+input {
+    width: 63.5rem;
+    height: 30rem;
 }
 </style>

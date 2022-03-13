@@ -10,6 +10,5 @@
 span {
     font-family: 'Varela Round', 'Lucida Console', 'Courier New', Courier, monospace;
     font-size: 64rem;
-    color: #303030;
 }
 </style>

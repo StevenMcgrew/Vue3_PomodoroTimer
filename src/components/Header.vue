@@ -11,9 +11,9 @@
 
 <style scoped>
 header {
-    background-color: rgb(84 110 122);
+    background-color: var(--app-primary-color);
     padding: 20rem 10rem;
-    color: #ffffffde;
+    color: var(--white-text-color);
 }
 
 h1 {
@@ -33,7 +33,7 @@ h1:hover {
 .link {
     text-decoration: none;
     padding: 20rem;
-    color: #ffffffde;
+    color: var(--white-text-color);
 }
 
 @media only screen and (max-width: 586px) {
