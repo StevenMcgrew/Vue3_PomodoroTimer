@@ -15,7 +15,7 @@ const color = computed({
         return store.state[props.id]
     },
     set(value) {
-        store.commit('updateAppPrimaryColor', { propName: props.id, propValue: value })
+        store.commit('updateAppAccentColor', { propName: props.id, propValue: value })
     }
 })
 

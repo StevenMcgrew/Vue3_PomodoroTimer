@@ -8,7 +8,7 @@
             @click="$store.commit('prepareNextTimerMode')"
             class="finished-popup">
             <div class="finished-popup-content">
-                <p>{{ $store.state.finishedText }}</p>
+                <p>{{ $store.state.finishedMessage }}</p>
                 <button @click="$store.commit('prepareNextTimerMode')">OK</button>
             </div>
         </div>
