@@ -118,11 +118,20 @@ function getTextContrastColor (hexcolor){
 	return (yiq >= 128) ? '#303030' : '#ffffff'; // returns black or white
 }
 
+function isContrastOkayWithWhiteText (hexcolor) {
+	hexcolor = hexcolor.slice(1) // remove the '#' at the beginning
+	let r = parseInt(hexcolor.substr(0,2),16)
+	let g = parseInt(hexcolor.substr(2,2),16)
+	let b = parseInt(hexcolor.substr(4,2),16)
+	let yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000
+	return (yiq >= 128) ? false : true
+}
+
 function setAppColors(hexColor) {
-    let contrastColor = getTextContrastColor(hexColor)
-    let root = document.querySelector(':root')
-    root.style.setProperty("--app-accent-color", hexColor)
-    root.style.setProperty("--text-contrast-color", contrastColor)
+    if (isContrastOkayWithWhiteText(hexColor)) {
+        let root = document.querySelector(':root')
+        root.style.setProperty("--app-accent-color", hexColor)    
+    }
 }
 
 export {
