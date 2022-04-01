@@ -11,8 +11,7 @@ export default createStore({
         isTimerRunning: false,
         isTimerInProgress: false,
         progress: ['workInterval'],
-        prefersSoundAlarm: true,
-        prefersTitleAlarm: true,
+        prefersAlarmSound: false,
         finishedMessage: '',
         isShowFinishedPopup: false,
         appAccentColor: '#536e7a',
@@ -28,6 +27,9 @@ export default createStore({
         updateAppAccentColor(state, payload) {
             state[payload.propName] = payload.propValue
             setAppColors(payload.propValue)
+        },
+        toggleAlarmSound(state, payload) {
+            // todo
         },
         toggleTimer(state) {
             state.isTimerRunning ? stopTimer(state) : startTimer(state)

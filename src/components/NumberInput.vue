@@ -27,14 +27,10 @@ const number = computed({
 </script>
 
 <template>
-    <label :for="id">{{ label }}</label>
+    <label :for="id" class="settings-label">{{ label }}</label>
     <input :id="id" type="number" :min="min" :max="max" v-model="number" />
 </template>
 
 <style scoped>
-label {
-    display: inline-block;
-    width: 150rem;
-    padding: 10rem 0rem;
-}
+
 </style>

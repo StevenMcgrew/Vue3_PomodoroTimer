@@ -83,6 +83,12 @@ button {
     font: inherit;
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 button {
     outline: none!important;
     border-style: none;
@@ -101,10 +107,10 @@ a {
     color: var(--app-accent-color);
 }
 
-#app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.settings-label {
+    display: inline-block;
+    width: 200rem;
+    padding: 10rem 0rem;
 }
 
 .page-container {

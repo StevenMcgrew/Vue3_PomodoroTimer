@@ -4,8 +4,8 @@
 
 <template>
     <div class="pp-btn-container">
-        <i role="button" @click="$store.commit('toggleTimer')" v-show="!$store.state.isTimerRunning" class="fas fa-play-circle"></i>
-        <i role="button" @click="$store.commit('toggleTimer')" v-show="$store.state.isTimerRunning" class="fas fa-pause-circle"></i>
+        <i role="button" @click="$store.commit('toggleTimer')" v-show="!$store.state.isTimerRunning" class="fa-solid fa-circle-play"></i>
+        <i role="button" @click="$store.commit('toggleTimer')" v-show="$store.state.isTimerRunning" class="fa-solid fa-circle-pause"></i>
     </div>
 </template>
 

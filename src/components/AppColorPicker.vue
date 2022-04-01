@@ -22,17 +22,12 @@ const color = computed({
 </script>
 
 <template>
-    <label :for="id">{{ label }}</label>
+    <label :for="id" class="settings-label">{{ label }}</label>
     <input :id="id" type="color" v-model="color" />
     <p>* To ensure contrast, lighter shades are not applied</p>
 </template>
 
 <style scoped>
-label {
-    display: inline-block;
-    width: 150rem;
-    padding: 10rem 0rem;
-}
 input {
     width: 63.5rem;
     height: 30rem;

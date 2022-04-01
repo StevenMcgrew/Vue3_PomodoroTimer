@@ -2,6 +2,7 @@
 
 import NumberInput from '../components/NumberInput.vue'
 import AppColorPicker from '../components/AppColorPicker.vue'
+import AlarmSoundToggle from '../components/AlarmSoundToggle.vue'
 
 </script>
 
@@ -10,6 +11,7 @@ import AppColorPicker from '../components/AppColorPicker.vue'
         <NumberInput :min="1" :max="120" :id="'workInterval'" :label="'Work Interval'"/><span>min</span><br>
         <NumberInput :min="1" :max="120" :id="'shortBreak'" :label="'Short break'"/><span>min</span><br>
         <NumberInput :min="1" :max="120" :id="'longBreak'" :label="'Long break'"/><span>min</span><br>
+        <AlarmSoundToggle :id="'prefersAlarmSound'" :label="'Alarm Sound'" /><br>
         <AppColorPicker :id="'appAccentColor'" :label="'App color'"/><br>
         <router-link class="lets-go" to="/">LET'S GO!</router-link>
         <button class="reset-btn">RESET ALL</button>

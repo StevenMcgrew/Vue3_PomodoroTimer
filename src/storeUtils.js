@@ -62,8 +62,8 @@ function onTimerFinished(state, alarmPlayer) {
     state.isShowFinishedPopup = true
 
     let alarmText = getAlarmText(newTimerMode)
-    if (state.prefersSoundAlarm) { alarmPlayer.play() }
-    if (state.prefersTitleAlarm) { startTitleAlarm(alarmText, 500) }
+    startTitleAlarm(alarmText, 500)
+    if (state.prefersAlarmSound) { alarmPlayer.play() }
 
     stopTimer(state)
 }
