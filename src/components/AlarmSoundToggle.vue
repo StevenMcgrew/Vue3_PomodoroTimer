@@ -15,7 +15,7 @@ const bool = computed({
         return store.state[props.id]
     },
     set(value) {
-        store.commit('toggleAlarmSound', { propName: props.id, propValue: value })
+        store.commit('toggleAlarmSound')
     }
 })
 

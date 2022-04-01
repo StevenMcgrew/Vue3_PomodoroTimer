@@ -28,8 +28,8 @@ export default createStore({
             state[payload.propName] = payload.propValue
             setAppColors(payload.propValue)
         },
-        toggleAlarmSound(state, payload) {
-            // todo
+        toggleAlarmSound(state) {
+            state.prefersAlarmSound = !state.prefersAlarmSound
         },
         toggleTimer(state) {
             state.isTimerRunning ? stopTimer(state) : startTimer(state)
