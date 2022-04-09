@@ -4,21 +4,25 @@ import { startTimer, stopTimer, setupNextTimerMode, stopAlarms, setAppAccentColo
 export default createStore({
     state: {
         counter: '25:00',
-        time: -1,
+        time: 0,
         workInterval: 25,
         shortBreak: 5,
         longBreak: 30,
         isTimerRunning: false,
         isTimerInProgress: false,
-        progress: ['workInterval'],
-        prefersAlarmSound: false,
-        finishedMessage: '',
         isShowFinishedPopup: false,
+        isFirstVisit: true,
+        prefersAlarmSound: false,
+        progress: ['workInterval'],
+        finishedMessage: '',
         appAccentColor: '#536e7a',
     },
     mutations: {
         setInitialTimer(state) {
             setupNextTimerMode(state)
+        },
+        setFirstVisitStatus(state, payload) {
+            state.isFirstVisit = payload.propValue
         },
         updateTimeSetting(state, payload) {
             state[payload.propName] = payload.propValue

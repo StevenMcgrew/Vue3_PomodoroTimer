@@ -7,7 +7,7 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
 </script>
 
 <template>
-    <div v-if="$store.state.time === -1" class="welcome-msg">
+    <div v-if="$store.state.isFirstVisit" class="welcome-msg">
         <p>Welcome!</p>
         <p>Go to <router-link to="/settings">Settings</router-link> to get started.</p>
     </div>

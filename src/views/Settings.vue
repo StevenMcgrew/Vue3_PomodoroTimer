@@ -3,6 +3,11 @@
 import NumberInput from '../components/NumberInput.vue'
 import AppColorPicker from '../components/AppColorPicker.vue'
 import AlarmSoundToggle from '../components/AlarmSoundToggle.vue'
+import { useStore } from 'vuex'
+const store = useStore()
+
+store.commit('setInitialTimer')
+store.commit('setFirstVisitStatus', { propValue: false })
 
 </script>
 
