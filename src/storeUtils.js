@@ -6,10 +6,6 @@ function msToString(ms) {
     return new Date(ms).toISOString().slice(14, 19)
 }
 
-function stringToMs(str) {
-    return Number(str.split(':')[0]) * 60000 + Number(str.split(':')[1]) * 1000
-}
-
 let titleInterval = null
 function startTitleAlarm(str, delay) {
     titleInterval = setInterval(function () {
@@ -107,17 +103,6 @@ function stopTimer(state) {
     }
 }
 
-function getTextContrastColor (hexcolor){
-	if (hexcolor.slice(0, 1) === '#') { hexcolor = hexcolor.slice(1) }
-    if (hexcolor.length > 6) { hexcolor.length = 6 }
-	if (hexcolor.length === 3) { hexcolor = hexcolor.split('').map(function (hex) { return hex + hex }).join('')}
-	let r = parseInt(hexcolor.substr(0,2),16)
-	let g = parseInt(hexcolor.substr(2,2),16)
-	let b = parseInt(hexcolor.substr(4,2),16)
-	let yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-	return (yiq >= 128) ? '#303030' : '#ffffff'; // returns black or white
-}
-
 function isContrastOkayWithWhiteText (hexcolor) {
 	hexcolor = hexcolor.slice(1) // remove the '#' at the beginning
 	let r = parseInt(hexcolor.substr(0,2),16)
@@ -127,7 +112,7 @@ function isContrastOkayWithWhiteText (hexcolor) {
 	return (yiq >= 128) ? false : true
 }
 
-function setAppColors(hexColor) {
+function setAppAccentColor(hexColor) {
     if (isContrastOkayWithWhiteText(hexColor)) {
         let root = document.querySelector(':root')
         root.style.setProperty("--app-accent-color", hexColor)    
@@ -139,5 +124,5 @@ export {
     stopTimer,
     setupNextTimerMode,
     stopAlarms,
-    setAppColors,
+    setAppAccentColor,
 }

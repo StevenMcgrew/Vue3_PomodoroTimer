@@ -14,7 +14,7 @@ import AlarmSoundToggle from '../components/AlarmSoundToggle.vue'
         <AlarmSoundToggle :id="'prefersAlarmSound'" :label="'Alarm Sound'" /><br>
         <AppColorPicker :id="'appAccentColor'" :label="'App color'"/><br>
         <router-link class="lets-go" to="/">LET'S GO!</router-link>
-        <button class="reset-btn">RESET ALL</button>
+        <button class="reset-btn" @click="$store.commit('restoreDefaultSettings')">RESET ALL</button>
     </form>
 </template>
 
@@ -29,7 +29,7 @@ form {
     outline: none!important;
     border-style: none;
     border: white 1rem solid;
-    box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+    box-shadow: 1px 1px 7px -3px black;
     border-radius: 6rem;
     background-color: var(--app-accent-color);
     color: var(--text-contrast-color);

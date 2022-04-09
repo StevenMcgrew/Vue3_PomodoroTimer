@@ -1,5 +1,5 @@
 import { createStore } from "vuex"
-import { startTimer, stopTimer, setupNextTimerMode, stopAlarms, setAppColors } from '../storeUtils.js'
+import { startTimer, stopTimer, setupNextTimerMode, stopAlarms, setAppAccentColor } from '../storeUtils.js'
 
 export default createStore({
     state: {
@@ -26,7 +26,7 @@ export default createStore({
         },
         updateAppAccentColor(state, payload) {
             state[payload.propName] = payload.propValue
-            setAppColors(payload.propValue)
+            setAppAccentColor(payload.propValue)
         },
         toggleAlarmSound(state) {
             state.prefersAlarmSound = !state.prefersAlarmSound
@@ -38,6 +38,13 @@ export default createStore({
             stopAlarms()
             state.isShowFinishedPopup = false
             setupNextTimerMode(state)
+        },
+        restoreDefaultSettings(state) {
+            this.commit('updateTimeSetting', { propName: 'workInterval', propValue: 25 })
+            this.commit('updateTimeSetting', { propName: 'shortBreak', propValue: 5 })
+            this.commit('updateTimeSetting', { propName: 'longBreak', propValue: 30 })
+            state.prefersAlarmSound = false
+            this.commit('updateAppAccentColor', { propName: 'appAccentColor', propValue: '#536e7a'})
         },
     },
     actions: {
