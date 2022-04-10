@@ -11,6 +11,7 @@ export default createStore({
         isTimerRunning: false,
         isTimerInProgress: false,
         isShowFinishedPopup: false,
+        isResetDropupVisible: false,
         isFirstVisit: true,
         prefersAlarmSound: false,
         progress: ['workInterval'],
@@ -37,6 +38,9 @@ export default createStore({
         },
         toggleTimer(state) {
             state.isTimerRunning ? stopTimer(state) : startTimer(state)
+        },
+        toggleResetDropup(state) {
+            state.isResetDropupVisible = !state.isResetDropupVisible
         },
         prepareNextTimerMode(state) {
             stopAlarms()

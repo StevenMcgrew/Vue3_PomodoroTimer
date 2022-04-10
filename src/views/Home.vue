@@ -3,6 +3,7 @@
 import ProgressBar from '../components/ProgressBar.vue'
 import Counter from '../components/Counter.vue'
 import PlayPauseBtn from '../components/PlayPauseBtn.vue'
+import ResetDropup from '../components/ResetDropup.vue'
 
 </script>
 
@@ -18,7 +19,7 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
         <div class="counter">
             <Counter />
             <PlayPauseBtn />
-            <router-link class="settings-link" to="/settings">Settings</router-link>
+            <ResetDropup />
         </div>
     </div>
 </template>
@@ -43,11 +44,6 @@ import PlayPauseBtn from '../components/PlayPauseBtn.vue'
     grid-area: counter;
     justify-self: center;
     padding-bottom: 20rem;
-}
-.settings-link {
-    display: block;
-    text-align: center;
-    padding: 20rem;
 }
 .welcome-msg {
     font-size: 22rem;
