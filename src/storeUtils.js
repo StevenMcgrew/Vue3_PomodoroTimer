@@ -43,10 +43,19 @@ function getAlarmText(nextMode) {
     if (nextMode === 'longBreak') { return 'Long Break Time' }
 }
 
+function startOver(state) {
+    stopTimer(state)
+    state.isTimerInProgress = false
+    state.progress = ['workInterval']
+    setupNextTimerMode(state)
+    state.isResetDropupVisible = false
+}
+
 function onTimerFinished(state, alarmPlayer) {
+    if (state.progress.length === 8) { startOver(state); return; }
+
     state.counter = '00:00'
     state.time = 0
-    state.isTimerInProgress = false
 
     let oldTimerMode = state.progress[state.progress.length - 1]
     let newTimerMode = getNextTimerMode(state.progress)
@@ -122,6 +131,7 @@ function setAppAccentColor(hexColor) {
 export {
     startTimer,
     stopTimer,
+    startOver,
     setupNextTimerMode,
     stopAlarms,
     setAppAccentColor,

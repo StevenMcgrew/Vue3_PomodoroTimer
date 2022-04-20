@@ -1,5 +1,5 @@
 import { createStore } from "vuex"
-import { startTimer, stopTimer, setupNextTimerMode, stopAlarms, setAppAccentColor } from '../storeUtils.js'
+import { startTimer, stopTimer, startOver, setupNextTimerMode, stopAlarms, setAppAccentColor } from '../storeUtils.js'
 
 export default createStore({
     state: {
@@ -46,6 +46,16 @@ export default createStore({
             stopAlarms()
             state.isShowFinishedPopup = false
             setupNextTimerMode(state)
+        },
+        timerResetCurrent(state) {
+            stopTimer(state)
+            let currentMode = state.progress[state.progress.length - 1]
+            this.commit('updateTimeSetting', { propName: currentMode, propValue: state[currentMode] })
+            setupNextTimerMode(state)
+            state.isResetDropupVisible = false
+        },
+        timerResetAll(state) {
+            startOver(state)
         },
         restoreDefaultSettings(state) {
             this.commit('updateTimeSetting', { propName: 'workInterval', propValue: 25 })

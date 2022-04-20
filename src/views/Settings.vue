@@ -54,5 +54,6 @@ form {
     background-color: white;
     color: var(--app-accent-color);
     border: 1rem solid var(--app-accent-color);
+    box-shadow: none;
 }
 </style>
