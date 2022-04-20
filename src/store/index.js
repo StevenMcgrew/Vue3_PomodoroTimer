@@ -17,6 +17,7 @@ export default createStore({
         progress: ['workInterval'],
         finishedMessage: '',
         appAccentColor: '#536e7a',
+        progressPercent: '0%',
     },
     mutations: {
         setInitialTimer(state) {
@@ -41,6 +42,9 @@ export default createStore({
         },
         toggleResetDropup(state) {
             state.isResetDropupVisible = !state.isResetDropupVisible
+        },
+        setProgressBarPercent(state, payload) {
+            state.progressPercent = payload.propValue
         },
         prepareNextTimerMode(state) {
             stopAlarms()

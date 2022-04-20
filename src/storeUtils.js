@@ -82,23 +82,25 @@ function setupNextTimerMode(state) {
     let timerMode = state.progress[state.progress.length - 1]
     state.time = state[timerMode] * 60000
     state.counter = msToString(state.time)
+    state.progressPercent = 0
 }
 
 let timerInterval = null
 function startTimer(state) {
     state.isTimerRunning = true
     state.isTimerInProgress = true
-    let timeRemaining = state.time
+    let totalTime = state.time
     let startTime = Date.now()
     timerInterval = setInterval(function () {
         let timeElapsed = Date.now() - startTime
-        let newTime = timeRemaining - timeElapsed
+        let newTime = totalTime - timeElapsed
         if (newTime <= 0) {
             onTimerFinished(state, el('alarmPlayer'))
             return
         }
         state.time = newTime
         state.counter = msToString(newTime)
+        state.progressPercent = timeElapsed/totalTime * 100
     }, 200)
 }
 
@@ -106,9 +108,6 @@ function stopTimer(state) {
     if (timerInterval) {
         clearInterval(timerInterval)
         state.isTimerRunning = false
-    }
-    else {
-        alert('Error:  something went wrong when trying to stop the timer.')
     }
 }
 

@@ -1,11 +1,24 @@
 <script setup>
 
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
+
+const progressWidth = computed({
+    get() {
+        return store.state.progressPercent
+    },
+    set(value) {
+        //
+    }
+})
+
 </script>
 
 <template>
     <p class="progress-text"></p>
     <div class="progress-bar">
-        <div class="progress"></div>
+        <div class="progress" :style="{ width: progressWidth + '%' }"></div>
     </div>
 </template>
 
@@ -23,6 +36,6 @@
 .progress {
     width: 0;
     height: 100%;
-    background-color: #536e7a;
+    background-color: var(--app-accent-color);
 }
 </style>
