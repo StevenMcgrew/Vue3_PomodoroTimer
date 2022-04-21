@@ -1,5 +1,9 @@
 <template>
     <header>
+        <div class="icon-container">
+            <div class="circle"></div>
+            <img src="/stopwatch.png" alt="Picture of a stopwatch">
+        </div>
         <h1 @click="$router.push('/')">Pomodoro Timer</h1>
         <nav class="header-nav">
             <router-link class="link" to="/">Home</router-link>
@@ -10,6 +14,25 @@
 </template>
 
 <style scoped>
+.icon-container {
+    display: inline-block;
+    margin-right: 5rem;
+}
+.circle {
+    display: inline-block;
+    background-color: white;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    margin-bottom: -6rem;
+}
+
+img {
+height: 38rem;
+    margin-bottom: -8rem;
+    margin-left: -34rem;
+}
+
 header {
     background-color: var(--app-accent-color);
     padding: 20rem 10rem;

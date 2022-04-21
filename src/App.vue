@@ -51,7 +51,7 @@ onAppStartUp()
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 :root {
-    --app-accent-color: #536e7a;
+    --app-accent-color: #3b83b0;
     --dark-text-color: #303030;
     --light-gray-text-color: #767676;
     --text-contrast-color: #ffffff;

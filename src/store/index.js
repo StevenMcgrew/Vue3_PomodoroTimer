@@ -16,7 +16,7 @@ export default createStore({
         prefersAlarmSound: false,
         progress: ['workInterval'],
         finishedMessage: '',
-        appAccentColor: '#536e7a',
+        appAccentColor: '#3b83b0',
         progressPercent: '0%',
     },
     mutations: {
@@ -66,7 +66,7 @@ export default createStore({
             this.commit('updateTimeSetting', { propName: 'shortBreak', propValue: 5 })
             this.commit('updateTimeSetting', { propName: 'longBreak', propValue: 30 })
             state.prefersAlarmSound = false
-            this.commit('updateAppAccentColor', { propName: 'appAccentColor', propValue: '#536e7a'})
+            this.commit('updateAppAccentColor', { propName: 'appAccentColor', propValue: '#3b83b0'})
         },
     },
     actions: {
