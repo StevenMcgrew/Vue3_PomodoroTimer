@@ -4,6 +4,18 @@ import ProgressBar from '../components/ProgressBar.vue'
 import Counter from '../components/Counter.vue'
 import PlayPauseBtn from '../components/PlayPauseBtn.vue'
 import ResetDropup from '../components/ResetDropup.vue'
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
+
+const progress = computed({
+    get() {
+        return store.state.progress.length
+    },
+    set(value) {
+        //
+    }
+})
 
 </script>
 
@@ -14,6 +26,16 @@ import ResetDropup from '../components/ResetDropup.vue'
     </div>
     <div v-else class="home">
         <div class="graphic">
+            <div>
+                <i class="fa-solid fa-computer" :class="{ active: progress === 1 }"></i>
+                <i class="fa-solid fa-mug-hot" :class="{ active: progress === 2 }"></i>
+                <i class="fa-solid fa-computer" :class="{ active: progress === 3 }"></i>
+                <i class="fa-solid fa-mug-hot" :class="{ active: progress === 4 }"></i>
+                <i class="fa-solid fa-computer" :class="{ active: progress === 5 }"></i>
+                <i class="fa-solid fa-mug-hot" :class="{ active: progress === 6 }"></i>
+                <i class="fa-solid fa-computer" :class="{ active: progress === 7 }"></i>
+                <i class="fa-solid fa-person-walking" :class="{ active: progress === 8 }"></i>
+            </div>
             <ProgressBar />
         </div>
         <div class="counter">
@@ -50,5 +72,16 @@ import ResetDropup from '../components/ResetDropup.vue'
     text-align: center;
     align-self: center;
     margin-top: -80rem;
+}
+i {
+    line-height: 28px;
+    padding: 3rem 5rem;
+    margin: 0 5rem;
+    color: var(--app-accent-color);
+    font-size: 22rem;
+    border-radius: 8rem;
+}
+.active {
+    box-shadow: orange 0rem 0rem 4px 5px;
 }
 </style>

@@ -36,6 +36,6 @@ const progressWidth = computed({
 .progress {
     width: 0;
     height: 100%;
-    background-color: var(--app-accent-color);
+    background-color: orange;
 }
 </style>
