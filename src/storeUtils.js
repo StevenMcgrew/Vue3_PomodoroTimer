@@ -89,18 +89,20 @@ let timerInterval = null
 function startTimer(state) {
     state.isTimerRunning = true
     state.isTimerInProgress = true
-    let totalTime = state.time
+    let timerMode = state.progress[state.progress.length - 1]
+    let totalModeTime = state[timerMode] * 60000
+    let remainingTime = state.time
     let startTime = Date.now()
     timerInterval = setInterval(function () {
         let timeElapsed = Date.now() - startTime
-        let newTime = totalTime - timeElapsed
-        if (newTime <= 0) {
+        let newRemainingTime = remainingTime - timeElapsed
+        if (newRemainingTime <= 0) {
             onTimerFinished(state, el('alarmPlayer'))
             return
         }
-        state.time = newTime
-        state.counter = msToString(newTime)
-        state.progressPercent = timeElapsed/totalTime * 100
+        state.time = newRemainingTime
+        state.counter = msToString(newRemainingTime)
+        state.progressPercent = (totalModeTime - newRemainingTime) / totalModeTime * 100
     }, 200)
 }
 

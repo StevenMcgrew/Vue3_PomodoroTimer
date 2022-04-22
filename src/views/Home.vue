@@ -27,14 +27,16 @@ const progress = computed({
     <div v-else class="home">
         <div class="graphic">
             <div>
-                <i class="fa-solid fa-computer" :class="{ active: progress === 1 }"></i>
-                <i class="fa-solid fa-mug-hot" :class="{ active: progress === 2 }"></i>
-                <i class="fa-solid fa-computer" :class="{ active: progress === 3 }"></i>
-                <i class="fa-solid fa-mug-hot" :class="{ active: progress === 4 }"></i>
-                <i class="fa-solid fa-computer" :class="{ active: progress === 5 }"></i>
-                <i class="fa-solid fa-mug-hot" :class="{ active: progress === 6 }"></i>
-                <i class="fa-solid fa-computer" :class="{ active: progress === 7 }"></i>
-                <i class="fa-solid fa-person-walking" :class="{ active: progress === 8 }"></i>
+                <div class="mode-icons-container">
+                    <i class="fa-solid fa-computer" :class="{ active: progress === 1 }"></i>
+                    <i class="fa-solid fa-mug-hot" :class="{ active: progress === 2 }"></i>
+                    <i class="fa-solid fa-computer" :class="{ active: progress === 3 }"></i>
+                    <i class="fa-solid fa-mug-hot" :class="{ active: progress === 4 }"></i>
+                    <i class="fa-solid fa-computer" :class="{ active: progress === 5 }"></i>
+                    <i class="fa-solid fa-mug-hot" :class="{ active: progress === 6 }"></i>
+                    <i class="fa-solid fa-computer" :class="{ active: progress === 7 }"></i>
+                    <i class="fa-solid fa-person-walking" :class="{ active: progress === 8 }"></i>
+                </div>
             </div>
             <ProgressBar />
         </div>
@@ -73,6 +75,11 @@ const progress = computed({
     align-self: center;
     margin-top: -80rem;
 }
+.mode-icons-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30rem;
+}
 i {
     line-height: 28px;
     padding: 3rem 5rem;
@@ -83,5 +90,14 @@ i {
 }
 .active {
     box-shadow: orange 0rem 0rem 4px 5px;
+}
+.graphic > div:first-of-type {
+    width: 90%;
+}
+@media only screen and (min-width: 900px) {
+    i {
+        line-height: 40rem;
+        font-size: 34rem;
+    }
 }
 </style>
