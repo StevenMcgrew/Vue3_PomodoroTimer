@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="icon-container">
+        <div class="icon-container" @click="$router.push('/')">
             <div class="circle"></div>
             <img src="/stopwatch.png" alt="Picture of a stopwatch">
         </div>
@@ -17,6 +17,7 @@
 .icon-container {
     display: inline-block;
     margin-right: 5rem;
+    cursor: pointer;
 }
 .circle {
     display: inline-block;
@@ -28,7 +29,7 @@
 }
 
 img {
-height: 38rem;
+    height: 38rem;
     margin-bottom: -8rem;
     margin-left: -34rem;
 }
@@ -43,12 +44,8 @@ h1 {
     display: inline;
     margin: 0;
     font-weight: 400;
-}
-
-h1:hover {
     cursor: pointer;
 }
-
 .header-nav {
     float: right;
     padding: 10rem;
