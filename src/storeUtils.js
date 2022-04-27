@@ -23,8 +23,7 @@ function stopTitleAlarm() {
 function getNextTimerMode(progress) {
     let currentMode = progress[progress.length - 1]
     if (currentMode === 'workInterval') {
-        let workIntervalCount = progress.filter(x => x === 'workInterval').length
-        return workIntervalCount === 4 ? 'longBreak' : 'shortBreak'
+        return progress.length === 7 ? 'longBreak' : 'shortBreak'
     }
     else {
         return 'workInterval'
@@ -52,37 +51,40 @@ function startOver(state) {
 }
 
 function onTimerFinished(state, alarmPlayer) {
-    if (state.progress.length === 8) { startOver(state); return; }
-
     state.counter = '00:00'
     state.time = 0
+    state.progressPercent = 100
 
-    let oldTimerMode = state.progress[state.progress.length - 1]
-    let newTimerMode = getNextTimerMode(state.progress)
-    state.progress.push(newTimerMode)
+    let oldMode = state.progress[state.progress.length - 1]
+    let newMode = getNextTimerMode(state.progress)
+    state.progress.push(newMode)
 
-    let previousMode = formatModeToText(oldTimerMode)
-    let nextMode = formatModeToText(newTimerMode)
-    state.finishedMessage = `The ${previousMode} timer has finished. Next up is a ${nextMode}.`
+    let oldModeText = formatModeToText(oldMode)
+    let newModeText = formatModeToText(newMode)
+    state.finishedMessage = `The ${oldModeText} timer has finished. Next up is a ${newModeText}.`
     state.isShowFinishedPopup = true
 
-    let alarmText = getAlarmText(newTimerMode)
-    startTitleAlarm(alarmText, 500)
+    let titleText = getAlarmText(newMode)
+    startTitleAlarm(titleText, 500)
     if (state.prefersAlarmSound) { alarmPlayer.play() }
 
     stopTimer(state)
 }
 
+function setupNextTimerMode(state) {
+    if (state.progress.length === 9) {
+        startOver(state)
+    }
+    else {
+        let timerMode = state.progress[state.progress.length - 1]
+        state.time = state[timerMode] * 60000
+        state.counter = msToString(state.time)
+        state.progressPercent = 0    }
+}
+
 function stopAlarms() {
     el('alarmPlayer').pause()
     stopTitleAlarm()
-}
-
-function setupNextTimerMode(state) {
-    let timerMode = state.progress[state.progress.length - 1]
-    state.time = state[timerMode] * 60000
-    state.counter = msToString(state.time)
-    state.progressPercent = 0
 }
 
 let timerInterval = null

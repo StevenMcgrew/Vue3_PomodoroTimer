@@ -17,7 +17,7 @@ export default createStore({
         progress: ['workInterval'],
         finishedMessage: '',
         appAccentColor: '#3b83b0',
-        progressPercent: '0%',
+        progressPercent: 0,
     },
     mutations: {
         setInitialTimer(state) {
