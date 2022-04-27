@@ -13,6 +13,7 @@ export default createStore({
         isShowFinishedPopup: false,
         isResetDropupVisible: false,
         isFirstVisit: true,
+        isColorTooLight: false,
         prefersAlarmSound: false,
         progress: ['workInterval'],
         finishedMessage: '',
@@ -30,9 +31,10 @@ export default createStore({
             state[payload.propName] = payload.propValue
             state.isTimerInProgress ? {} : setupNextTimerMode(state)
         },
-        updateAppAccentColor(state, payload) {
+        updateAppColor(state, payload) {
             state[payload.propName] = payload.propValue
-            setAppAccentColor(payload.propValue)
+            let bool = setAppAccentColor(payload.propValue)
+            state.isColorTooLight = !bool
         },
         toggleAlarmSound(state) {
             state.prefersAlarmSound = !state.prefersAlarmSound
@@ -66,7 +68,7 @@ export default createStore({
             this.commit('updateTimeSetting', { propName: 'shortBreak', propValue: 5 })
             this.commit('updateTimeSetting', { propName: 'longBreak', propValue: 30 })
             state.prefersAlarmSound = false
-            this.commit('updateAppAccentColor', { propName: 'appAccentColor', propValue: '#3b83b0'})
+            this.commit('updateAppColor', { propName: 'appAccentColor', propValue: '#3b83b0'})
         },
     },
     actions: {

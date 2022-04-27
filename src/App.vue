@@ -17,7 +17,7 @@ function restoreStateIfAvaiable() {
         store.replaceState(
             Object.assign(store.state, JSON.parse(localStorage.getItem('state')))
         )
-        store.commit('updateAppAccentColor', {
+        store.commit('updateAppColor', {
             propName: 'appAccentColor',
             propValue: store.state.appAccentColor
         })

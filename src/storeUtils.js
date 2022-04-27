@@ -127,8 +127,10 @@ function isContrastOkayWithWhiteText (hexcolor) {
 function setAppAccentColor(hexColor) {
     if (isContrastOkayWithWhiteText(hexColor)) {
         let root = document.querySelector(':root')
-        root.style.setProperty("--app-accent-color", hexColor)    
+        root.style.setProperty("--app-accent-color", hexColor)
+        return true
     }
+    return false
 }
 
 export {

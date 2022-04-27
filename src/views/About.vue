@@ -26,7 +26,7 @@
         </ol>
 
         <p>
-            Source:    Wikipedia <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">https://en.wikipedia.org/wiki/Pomodoro_Technique</a>
+            Source:    Wikipedia <a target="_blank" href="https://en.wikipedia.org/wiki/Pomodoro_Technique">https://en.wikipedia.org/wiki/Pomodoro_Technique</a>
         </p>
 
     </div>
