@@ -1,10 +1,10 @@
 {
     "name": "vue3-pomodorotimer",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "serve": "vite preview"
+        "serve": "vite preview --port 9001"
     },
     "dependencies": {
         "vue": "^3.2.16",
