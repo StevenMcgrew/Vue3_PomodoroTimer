@@ -12,4 +12,8 @@ This pomodoro timer app was built with Vue 3, Vuex, and Vite. The app has settin
 <br>
 <br>
 
-<img src="https://github.com/StevenMcgrew/Vue3_PomodoroTimer/blob/master/pomodoro-timer-app.png?raw=true" alt="Image of Pomodor Timer app"/>
+<img src="https://github.com/StevenMcgrew/Vue3_PomodoroTimer/blob/master/picture-home-page.png?raw=true" alt="Image of app home page" width="500"/>
+<br>
+<img src="https://github.com/StevenMcgrew/Vue3_PomodoroTimer/blob/master/picture-settings-page.png?raw=true" alt="Image of app settings page" width="500"/>
+<br>
+<img src="https://github.com/StevenMcgrew/Vue3_PomodoroTimer/blob/master/picture-about-page.png?raw=true" alt="Image of app about page" width="500"/>
