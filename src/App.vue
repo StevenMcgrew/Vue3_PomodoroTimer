@@ -44,7 +44,7 @@ onAppStartUp()
     </div>
     <Footer></Footer>
     <FinishedPopup></FinishedPopup>
-    <audio id="alarmPlayer" src="/Beep.mp3" loop></audio>
+    <audio id="alarmPlayer" src="/Vue3_PomodoroTimer/Beep.mp3" loop></audio>
 </template>
 
 <style>

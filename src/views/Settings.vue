@@ -19,7 +19,7 @@ store.commit('setFirstVisitStatus', { propValue: false })
         <AlarmSoundToggle :id="'prefersAlarmSound'" :label="'Alarm Sound'" /><br>
         <AppColorPicker :id="'appAccentColor'" :label="'App color'"/><br>
         <router-link class="lets-go" to="/">LET'S GO!</router-link>
-        <button class="reset-btn" @click="$store.commit('restoreDefaultSettings')">RESTORE DEFAULTS</button>
+        <button type="button" class="reset-btn" @click="$store.commit('restoreDefaultSettings')">RESTORE DEFAULTS</button>
     </form>
 </template>
 
