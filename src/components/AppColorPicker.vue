@@ -38,11 +38,11 @@ const isColorTooLight = computed({
 
 <style scoped>
 input {
-    width: 63.5rem;
-    height: 30rem;
+    width: 3.96875rem;
+    height: 1.875rem;
 }
 p {
-    font-size: 12rem;
+    font-size: 0.75rem;
     margin: 0;
 }
 .warn {

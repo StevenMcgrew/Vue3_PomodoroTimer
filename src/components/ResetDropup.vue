@@ -17,25 +17,25 @@
 .dropup-btn {
     background-color: white;
     color: var(--app-accent-color);
-    border: 1rem solid var(--app-accent-color);
+    border: 0.0625rem solid var(--app-accent-color);
     box-shadow: none;
-    width: 178rem;
+    width: 11.125rem;
 }
 .dropup {
     position: relative;
     display: block;
     text-align: center;
-    padding-top: 20rem;
+    padding-top: 1.25rem;
 }
 .dropup-content {
     position: absolute;
     bottom: 50px;
     z-index: 1;
     background-color: white;
-    padding: 10rem;
+    padding: 0.625rem;
     box-shadow: 1px 1px 7px -4px black;
 }
 .reset-btns {
-    margin: 10rem;
+    margin: 0.625rem;
 }
 </style>

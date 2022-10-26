@@ -45,12 +45,12 @@ import ModeIconBar from '../components/ModeIconBar.vue'
 .counter {
     grid-area: counter;
     justify-self: center;
-    padding-bottom: 20rem;
+    padding-bottom: 1.25rem;
 }
 .welcome-msg {
-    font-size: 22rem;
+    font-size: 1.375rem;
     text-align: center;
     align-self: center;
-    margin-top: -80rem;
+    margin-top: -5rem;
 }
 </style>

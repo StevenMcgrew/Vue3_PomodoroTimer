@@ -5,7 +5,7 @@
 <style scoped>
 footer {
     text-align: center;
-    font-size: 14rem;
+    font-size: 0.875rem;
     color: var(--light-gray-text-color);
 }
 </style>

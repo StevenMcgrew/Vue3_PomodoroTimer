@@ -37,6 +37,6 @@
     width: 90%;
 }
 p, ol {
-    font-size: 15rem;
+    font-size: 0.9375rem;
 }
 </style>

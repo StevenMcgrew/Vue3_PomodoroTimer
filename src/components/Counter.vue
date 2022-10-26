@@ -9,6 +9,6 @@
 <style scoped>
 span {
     font-family: 'Varela Round', 'Lucida Console', 'Courier New', Courier, monospace;
-    font-size: 64rem;
+    font-size: 4rem;
 }
 </style>

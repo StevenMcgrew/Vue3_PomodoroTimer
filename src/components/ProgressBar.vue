@@ -24,9 +24,9 @@ const progressWidth = computed({
 <style scoped>
 .progress-bar {
     width: 90%;
-    height: 40rem;
+    height: 2.5rem;
     background-color: #eee;
-    border-radius: 6rem;
+    border-radius: 0.375rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
     border: 2px solid var(--app-accent-color);
 }
@@ -34,14 +34,14 @@ const progressWidth = computed({
     width: 0;
     height: 100%;
     background-color: orange;
-    border-radius: 4rem;
+    border-radius: 0.25rem;
 }
 @media only screen and (max-width: 900px) {
     .progress {
-        height: 21rem;
+        height: 1.3125rem;
     }
     .progress-bar {
-        height: 25rem;
+        height: 1.5625rem;
     }
 }
 </style>

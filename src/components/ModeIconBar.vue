@@ -37,27 +37,27 @@ const progress = computed({
 .icons-container {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 30rem;
+    margin-bottom: 1.875rem;
 }
 i {
     line-height: 28px;
-    padding: 3rem 5rem;
-    margin: 0 5rem;
+    padding: 0.1875rem 0.3125rem;
+    margin: 0 0.3125rem;
     color: lightgray;
-    font-size: 22rem;
-    border-radius: 8rem;
+    font-size: 1.375rem;
+    border-radius: 0.5rem;
 }
 .active {
     color: var(--app-accent-color);
-    box-shadow: orange 0rem 0rem 4px 5px;
+    box-shadow: orange 0 0 4px 5px;
 }
 .completed {
     color: var(--app-accent-color);
 }
 @media only screen and (min-width: 900px) {
     i {
-        line-height: 40rem;
-        font-size: 34rem;
+        line-height: 2.5rem;
+        font-size: 2.125rem;
     }
 }
 </style>

@@ -64,11 +64,11 @@ onAppStartUp()
 }
 
 html {
-    font-size: 0.0625rem;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    font-size: 16rem;
+    font-size: 1rem;
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
@@ -92,10 +92,10 @@ button {
 button {
     outline: none!important;
     border-style: none;
-    border: white 1rem solid;
+    border: white 0.0625rem solid;
     box-shadow: 1px 1px 7px -4px black;
-    font-size: 18rem;
-    border-radius: 6rem;
+    font-size: 1.125rem;
+    border-radius: 0.375rem;
     background-color: var(--app-accent-color);
     color: var(--text-contrast-color);
     padding: 10px 15px 9px 15px;
@@ -109,8 +109,8 @@ a {
 
 .settings-label {
     display: inline-block;
-    width: 200rem;
-    padding: 10rem 0rem;
+    width: 12.5rem;
+    padding: 0.625rem 0rem;
 }
 
 .page-container {

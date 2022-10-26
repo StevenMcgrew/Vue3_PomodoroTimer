@@ -30,17 +30,17 @@ const bool = computed({
 
 <style scoped>
 .toggle-spacing {
-    margin: 0rem 0rem -7rem 0rem;
+    margin: 0rem 0rem -0.4375rem 0rem;
 }
 .toggle {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 62px;
-  height: 32px;
+  width: 3.875rem;
+  height: 2rem;
   display: inline-block;
   position: relative;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   overflow: hidden;
   outline: none;
   border: none;
@@ -53,27 +53,27 @@ const bool = computed({
   display: block;
   position: absolute;
   z-index: 2;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   background: #fff;
-  left: 2px;
-  top: 2px;
+  left: 0.125rem;
+  top: 0.125rem;
   border-radius: 50%;
-  font: 10px/28px Helvetica;
+  font: 0.625rem/1.75rem Helvetica;
   text-transform: uppercase;
   font-weight: bold;
-  text-indent: -22px;
-  word-spacing: 37px;
+  text-indent: -1.375rem;
+  word-spacing: 2.3125rem;
   color: #fff;
-  text-shadow: -1px -1px rgba(0,0,0,0.15);
+  text-shadow: -0.0625rem -0.0625rem rgba(0,0,0,0.15);
   white-space: nowrap;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.2);
   transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
 }
 .toggle:checked {
   background-color: var(--app-accent-color);
 }
 .toggle:checked:before {
-  left: 32px;
+  left: 2rem;
 }
 </style>

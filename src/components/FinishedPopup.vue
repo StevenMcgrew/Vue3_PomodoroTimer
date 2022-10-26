@@ -37,6 +37,6 @@
     background-color: white;
     max-width: 90%;
     padding: 20px 30px 30px 30px;
-    border-radius: 3rem;
+    border-radius: 0.1875rem;
 }
 </style>

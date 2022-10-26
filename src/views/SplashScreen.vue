@@ -40,9 +40,9 @@ setTimeout(function() {
     color: white;
 }
 .splash-title {
-    font-size: 40rem;
+    font-size: 2.5rem;
 }
 .splash-loader {
-    font-size: 20rem;
+    font-size: 1.25rem;
 }
 </style>

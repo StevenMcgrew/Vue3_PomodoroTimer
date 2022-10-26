@@ -18,24 +18,24 @@
 <style scoped>
 .icon-container {
     display: inline-block;
-    margin-right: 5rem;
+    margin-right: 0.3125rem;
 }
 .circle {
     display: inline-block;
     background-color: white;
-    width: 30rem;
-    height: 30rem;
+    width: 1.875rem;
+    height: 1.875rem;
     border-radius: 50%;
-    margin-bottom: -6rem;
+    margin-bottom: -0.375rem;
 }
 img {
-    height: 38rem;
-    margin-bottom: -8rem;
-    margin-left: -34rem;
+    height: 2.375rem;
+    margin-bottom: -0.5rem;
+    margin-left: -2.125rem;
 }
 header {
     background-color: var(--app-accent-color);
-    padding: 20rem 10rem;
+    padding: 1.25rem 0.625rem;
     color: var(--text-contrast-color);
 }
 h1 {
@@ -46,26 +46,26 @@ h1 {
 }
 .header-nav {
     float: right;
-    padding: 10rem;
+    padding: 0.625rem;
 }
 .link {
     text-decoration: none;
-    padding: 20rem;
+    padding: 1.25rem;
     color: var(--text-contrast-color);
 }
 @media only screen and (max-width: 620px) {
     .header-nav {
         float: none;
         text-align: center;
-        padding-bottom: 0rem;
+        padding-bottom: 0;
     }
     h1 {
         display: block;
         text-align: center;
-        margin-left: -43rem;
+        margin-left: -2.6875rem;
     }
     .link {
-        padding-top: 10rem;
+        padding-top: 0.625rem;
     }
 }
 </style>

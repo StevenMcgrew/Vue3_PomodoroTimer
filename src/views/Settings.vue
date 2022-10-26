@@ -26,16 +26,16 @@ store.commit('setFirstVisitStatus', { propValue: false })
 <style scoped>
 form {
     align-self: center;
-    margin-top: -10rem;
-    font-size: 20rem;
+    margin-top: -0.625rem;
+    font-size: 1.25rem;
 }
 .lets-go {
     text-decoration: none;
     outline: none!important;
     border-style: none;
-    border: white 1rem solid;
+    border: white 0.0625rem solid;
     box-shadow: 1px 1px 7px -3px black;
-    border-radius: 6rem;
+    border-radius: 0.375rem;
     background-color: var(--app-accent-color);
     color: var(--text-contrast-color);
     padding: 10px 15px 9px 15px;
@@ -44,16 +44,16 @@ form {
     display: block;
     text-align: center;
     width: 90%;
-    font-size: 18rem;
+    font-size: 1.125rem;
 }
 .reset-btn {
     display: block;
     margin: 0 auto;
-    margin-top: 20rem;
+    margin-top: 1.25rem;
     width: 90%;
     background-color: white;
     color: var(--app-accent-color);
-    border: 1rem solid var(--app-accent-color);
+    border: 0.0625rem solid var(--app-accent-color);
     box-shadow: none;
 }
 </style>
