@@ -74,7 +74,6 @@ body {
         sans-serif;
     color: var(--dark-text-color);
     min-height: 100vh;
-    min-height: 100dvh;
     margin: 0;
 }
 
