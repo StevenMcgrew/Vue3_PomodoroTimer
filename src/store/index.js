@@ -13,7 +13,6 @@ export default createStore({
         isShowFinishedPopup: false,
         isResetDropupVisible: false,
         isFirstVisit: true,
-        isColorTooLight: false,
         prefersAlarmSound: false,
         progress: ['workInterval'],
         finishedMessage: '',
@@ -33,8 +32,7 @@ export default createStore({
         },
         updateAppColor(state, payload) {
             state[payload.propName] = payload.propValue
-            let bool = setAppAccentColor(payload.propValue)
-            state.isColorTooLight = !bool
+            setAppAccentColor(payload.propValue)
         },
         toggleAlarmSound(state) {
             state.prefersAlarmSound = !state.prefersAlarmSound

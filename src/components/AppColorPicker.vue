@@ -1,6 +1,5 @@
 <script setup>
 
-import { computed } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 
@@ -9,43 +8,44 @@ const props = defineProps({
     label: String,
 })
 
-// bind v-model="color" to the vuex store
-const color = computed({
-    get() {
-        return store.state[props.id]
-    },
-    set(value) {
-        store.commit('updateAppColor', { propName: props.id, propValue: value })
-    }
-})
-
-const isColorTooLight = computed({
-    get() {
-        return store.state.isColorTooLight
-    },
-    set(value) {
-        //
-    }
-})
+function setColor(hexColor) {
+    store.commit('updateAppColor', { propName: props.id, propValue: hexColor })
+}
 
 </script>
 
 <template>
     <label :for="id" class="settings-label">{{ label }}</label>
-    <input :id="id" type="color" v-model="color" />
-    <p :class="{ warn: isColorTooLight }">* To ensure contrast, lighter shades are not applied</p>
+    <div class="dot-container">
+        <div class="blue-dot" @click="setColor('#3b83b0')"></div>
+        <div class="red-dot" @click="setColor('#c93232')"></div>
+        <div class="green-dot" @click="setColor('#008000')"></div>
+    </div>
 </template>
 
 <style scoped>
-input {
-    width: 3.96875rem;
+
+.dot-container {
+    display: inline-block;
+}
+.dot-container > div {
+    display: inline-block;
+    border-radius: 50%;
+    width: 1.875rem;
     height: 1.875rem;
+    margin-right: 0.3125rem;
 }
-p {
-    font-size: 0.75rem;
-    margin: 0;
+
+.blue-dot {
+    background-color: #3b83b0;
 }
-.warn {
-    color: red;
+
+.red-dot {
+    background-color: #c93232;
 }
+
+.green-dot {
+    background-color: #008000;
+}
+
 </style>

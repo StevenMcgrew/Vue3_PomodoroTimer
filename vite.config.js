@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/Vue3_PomodoroTimer/',
+    base: '/apps/Pomodoro-Timer/',
     plugins: [vue()],
     server: { port: 9001 },
 })

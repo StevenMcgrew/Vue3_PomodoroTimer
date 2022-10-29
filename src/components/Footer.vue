@@ -1,11 +1,17 @@
 <template>
-    <footer>Steve's Pomodoro Timer demo app</footer>
+    <footer>
+        <div>©2022 Steven McGrew</div>
+    </footer>
 </template>
 
 <style scoped>
 footer {
-    text-align: center;
+    text-align: right;
     font-size: 0.875rem;
-    color: var(--light-gray-text-color);
+    color: var(--dark-text-color);
+}
+
+footer > div {
+    padding: 0.3125rem;
 }
 </style>
