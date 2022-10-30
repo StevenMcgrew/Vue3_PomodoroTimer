@@ -4,14 +4,24 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import FinishedPopup from './components/FinishedPopup.vue'
 import { useStore } from 'vuex'
+import { startTimer } from './storeUtils'
 const store = useStore()
 
+// Save state on visibilitychange
+document.addEventListener("visibilitychange", function (e) {
+    if (document.hidden) {
+        localStorage.setItem('state', JSON.stringify(store.state))
+    }
+})
+
+// Save state on mutation
 function subscribeToSavingState() {
     store.subscribe((mutation, state) => {
         localStorage.setItem('state', JSON.stringify(state))
     })
 }
 
+// Restore state on load
 function restoreStateIfAvaiable() {
     if (localStorage.getItem('state')) {
         store.replaceState(
@@ -22,14 +32,14 @@ function restoreStateIfAvaiable() {
             propValue: store.state.appAccentColor
         })
     }
+    if (store.state.isTimerRunning) {
+        startTimer(store.state)
+    }
 }
 
-function onAppStartUp() {
-    subscribeToSavingState()
-    restoreStateIfAvaiable()
-}
-
-onAppStartUp()
+// Run these on start up
+subscribeToSavingState()
+restoreStateIfAvaiable()
 
 </script>
 
@@ -90,7 +100,7 @@ button {
 }
 
 button {
-    outline: none!important;
+    outline: none !important;
     border-style: none;
     border: white 0.0625rem solid;
     box-shadow: 1px 1px 7px -4px black;

@@ -111,8 +111,8 @@ function startTimer(state) {
 function stopTimer(state) {
     if (timerInterval) {
         clearInterval(timerInterval)
-        state.isTimerRunning = false
     }
+    state.isTimerRunning = false
 }
 
 function isContrastOkayWithWhiteText (hexcolor) {
